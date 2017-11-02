@@ -1,0 +1,15 @@
+<ul>
+     <li ng-repeat="room in rooms">
+         {{ room.name }}
+         <!-- edit a room -->
+        <!-- <input ng-model="room.name" ng-change="rooms.$save(room)" /> -->
+        <!-- delete a room -->
+        <!-- <button ng-click="rooms.$remove(room)">Delete Room</button> -->
+    </li>
+</ul>
+
+<!-- push a new room onto the array -->
+<form ng-submit="addRoom()">
+    <input ng-model="newRoomName" />
+    <button type="submit">Create Room</button>
+</form> 
