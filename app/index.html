@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <title>Bloc Chat</title>
     <link rel="stylesheet" href="/styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.css">
 </head>
 <body>
     <ui-view></ui-view>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+
   <!-- Angular -->
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
@@ -38,9 +44,12 @@
    <!-- Application Files -->
     <script src="/scripts/app.js"></script>
     <script src="/scripts/factories/Room.js"></script>
+    <script src="/scripts/factories/Message.js"></script>
+    <script src="/scripts/factories/BlocChatCookies.js"></script>
     <script src="/scripts/controllers/RoomCtrl.js"></script>
     <script src="/scripts/controllers/HomeCtrl.js"></script>
     <script src="/scripts/controllers/ModalCtrl.js"></script>
     <script src="/scripts/controllers/ModalInstanceCtrl.js"></script>
+    <script src="/scripts/controllers/usernameModalCtrl.js"></script>
 </body>
 </html>

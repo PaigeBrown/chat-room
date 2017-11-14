@@ -1,15 +1,43 @@
-<ul>
-     <li ng-repeat="room in rooms">
-         {{ room.name }}
-         <!-- edit a room -->
-        <!-- <input ng-model="room.name" ng-change="rooms.$save(room)" /> -->
-        <!-- delete a room -->
-        <!-- <button ng-click="rooms.$remove(room)">Delete Room</button> -->
-    </li>
-</ul>
+<div class="room-list-container">
+    <div class="room-list-title">
+        <span ui-sref="home">Bloc Chat</span>
+        <button type="button" class="btn btn-default" ng-click="open()">Create New Room</button>
+    </div>
 
-<!-- push a new room onto the array -->
-<form ng-submit="addRoom()">
-    <input ng-model="newRoomName" />
-    <button type="submit">Create Room</button>
-</form> 
+    <script type="text/ng-template" id="rooms.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Create a new room!</h3>
+        </div>
+        <div class="modal-body">
+            <!-- push a new room onto the array -->
+            Name: <input ng-model="newRoomName" />
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-primary" type="button" ng-click="create()">Create</button>
+        </div>
+    </script>
+
+    <br/>
+
+    <div class="room-list-rooms">
+        <div class="room-list-rooms-individual" ng-repeat="room in rooms.rooms" ng-click="setCurrentRoom(room)">
+            {{ room.name }}
+        </div>
+    </div>
+</div>
+
+<div class="chat-message-container">
+    <h1>{{ currentRoom.name }}</h1>
+    <div class="chat-message-messages" ng-repeat="message in messages">
+        {{ message.username }} @ {{ message.sentAt | date:'y MMM dd, hh:mm:ss a' }}
+        <br/>
+        - {{ message.content }}
+    </div>
+
+    <div class="chat-message-newMessage" ng-show="currentRoom">
+        <!-- push a new message onto the array -->
+        {{ currentUser }}: <input ng-model="newMessage" />
+        <button class="btn btn-primary" type="button" ng-click="sendMessage(currentRoom)">Send Message</button>
+    </div>
+</div>
