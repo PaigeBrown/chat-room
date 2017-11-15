@@ -96,7 +96,7 @@ body {
     left: 20%;
     width: 80%;
     height: 100%;
-    background-color: white;
+    background-color: lightblue;
     z-index: 1;
     overflow: scroll;
 }
@@ -104,6 +104,7 @@ body {
 
 .messages-body {
     padding-right: 10px;
+    background-color: green;
 }
 
 .messages-body .username {
@@ -125,11 +126,16 @@ body {
     display: inline-block;
 }
 
+.test {
+  font-family: 'Lora', serif;
+  text-align: center;
+}
+
 .message-field {
     bottom: 15px;
     padding-bottom: 5px;
     position: fixed;
-    left: 250px;
+    left: 25%;
 }
 
 .message-box {

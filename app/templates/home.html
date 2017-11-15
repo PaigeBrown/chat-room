@@ -12,8 +12,10 @@
 
     </div>
 </section>
-<section>
-        <div class="messages-body" ng-repeat="message in home.messages">
+<section class="messages">
+  <h2 class="test"> TEST </h2>
+        <div class="messages-body" ng-show="currentRoomID">
+          <h2 class="test"> Test Message Spot </h2>
             <div class="username">{{ message.username }}</div>
             <div class="timestamp">{{ message.sentAt | date : "shortTime" }}</div>
             <div class="user-message">{{ message.content }}</div>

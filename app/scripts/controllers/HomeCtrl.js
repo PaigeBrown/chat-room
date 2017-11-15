@@ -19,7 +19,12 @@
 
     }
 
-
+console.log(this.messages)
+// this.messages returns undefined
+// console.log(message in messages)
+// $scope.messages returns issues with $scope but things pops up
+// this.messages = ($scope.newMessageContent, $scope.currentRoom)
+//above also makes the message.content pop up.
 
     //   call get messages by room ID
     //   have ng-repeat of messages that will update to show new messages
